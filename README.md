@@ -22,7 +22,7 @@ docker run -d \
   --device /dev/net/tun \
   --sysctl net.ipv6.conf.all.disable_ipv6=1 \
   --privileged \
-  kartikbhalla/hideme_wg_oracle_arm64
+  kartikbhalla/hideme_wg_oracle_arm64:latest
 ```
 
 ## Environment Variables
