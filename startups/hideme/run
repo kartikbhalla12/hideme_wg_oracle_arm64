@@ -37,7 +37,7 @@ else
     sleep 5
   done
   echo "${AT_FILEPATH} created!"
-  chmod 777 /config/accessToken.txt
+  chmod 777 ${AT_FILEPATH}
 fi
 
 ### start HideMe
