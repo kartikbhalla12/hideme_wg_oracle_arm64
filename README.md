@@ -21,7 +21,7 @@ docker run -d \
   --cap-add=NET_ADMIN \
   --device /dev/net/tun \
   --sysctl net.ipv6.conf.all.disable_ipv6=1 \
-  --privileged
+  --privileged \
   kartikbhalla/hideme_wg_oracle_arm64
 ```
 
