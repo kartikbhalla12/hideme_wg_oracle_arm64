@@ -1,6 +1,6 @@
 FROM alpine:latest AS builder
 
-LABEL org.opencontainers.image.authors="alturismo@gmail.com"
+LABEL org.opencontainers.image.authors="alturismo@gmail.com, kartikbhalla12@gmail.com"
 
 # Set Variables
 ARG MICROSOCKS_V=1.0.3
@@ -18,14 +18,14 @@ RUN wget -O /tmp/microsocks_v${MICROSOCKS_V}.tar.gz https://github.com/rofl0r/mi
     DESTDIR=/tmp/copy make install
 
 # Download hide.me binary and move binary to copy directory
-RUN wget -O /tmp/hide.me_v${HIDEME_V}.tar.gz https://github.com/eventure/hide.client.linux/releases/download/${HIDEME_V}/hide.me-linux-amd64-${HIDEME_V}.tar.gz && \
+RUN wget -O /tmp/hide.me_v${HIDEME_V}.tar.gz https://github.com/eventure/hide.client.linux/releases/download/${HIDEME_V}/hide.me-linux-arm64-${HIDEME_V}.tar.gz && \
     tar -C /tmp -xvf /tmp/hide.me_v${HIDEME_V}.tar.gz && \
     mkdir -p /tmp/copy/usr/bin && \
     cp /tmp/hide.me /tmp/copy/usr/bin/hide.me
 
 FROM alpine:latest
 
-LABEL org.opencontainers.image.authors="alturismo@gmail.com"
+LABEL org.opencontainers.image.authors="alturismo@gmail.com, kartikbhalla12@gmail.com"
 
 # Add Packages
 RUN apk update && \
